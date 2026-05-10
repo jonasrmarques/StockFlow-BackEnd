@@ -23,7 +23,7 @@ class LoginView(APIView):
         )
 
         serializer.is_valid(
-            raise_excepetion=True
+            raise_exception=True
         )
 
         usuario = authenticate(
@@ -42,7 +42,7 @@ class LoginView(APIView):
         )
 
         return Response({
-            'acess': str(refresh.acess_token),
+            'acess': str(refresh.access_token),
             'refresh': str(refresh),
             'usuario': UsuarioSerializer(usuario).data
         })
